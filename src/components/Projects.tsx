@@ -12,6 +12,8 @@ const projects = [
     image: project1,
     github: "https://github.com/Tech-Hubb/Mood-Map",
     demo: "https://share.zight.com/WnunPYX1",
+    documentation: "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/jaden_rowdie_capaciti_org_za/EYpePD1rJnBAsdsgFeuguhUBVkkE4AopEs3Xl-JJAdlwtQ?e=QF1v6E",
+    demoLabel: "View Demo",
   },
   {
     title: "ThriveSense Mental Wellness Assistant",
@@ -19,6 +21,8 @@ const projects = [
     image: project3,
     github: "https://github.com/Tech-Hubb/Thrivesense-AI-Wellness-assistant",
     demo: "https://share.zight.com/WnunLzPN",
+    documentation: "https://capeitinitiative.sharepoint.com/:b:/s/DevNinjas/EQQWpWX9dLhArNmlN53zjA8Bfb4Flp2jF38zOM5UqMrDvA?e=KOtiSK",
+    demoLabel: "View Demo",
   },
   {
     title: "Algora Chatbot",
@@ -26,6 +30,8 @@ const projects = [
     image: project2,
     github: "https://github.com/JadenMcRowdie/Algora-Chatbot",
     demo: "https://creator.voiceflow.com/share/68aea8e4d54e34927d61667f/development",
+    documentation: "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/jaden_rowdie_capaciti_org_za/Ec_VcThgsbdJvuLoJ93tUksBoOAFh5j5ushwn2SphyZVSw?e=ck0w1b",
+    demoLabel: "View Website",
   },
 ];
 
@@ -59,7 +65,7 @@ const Projects = () => {
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              <CardFooter className="flex gap-4">
+              <CardFooter className="flex gap-4 flex-wrap">
                 <Button variant="default" size="sm" asChild>
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
@@ -70,7 +76,15 @@ const Projects = () => {
                   <Button variant="outline" size="sm" asChild>
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      View Demo
+                      {project.demoLabel || "View Demo"}
+                    </a>
+                  </Button>
+                )}
+                {project.documentation && (
+                  <Button variant="secondary" size="sm" asChild>
+                    <a href={project.documentation} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Documentation
                     </a>
                   </Button>
                 )}
