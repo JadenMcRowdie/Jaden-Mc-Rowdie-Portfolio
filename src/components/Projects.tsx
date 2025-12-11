@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github, ExternalLink, FileText, ChevronLeft, ChevronRight } from "lucide-react";
+import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -13,7 +13,6 @@ const projects = [
     image: project1,
     github: "https://github.com/Tech-Hubb/Mood-Map",
     demo: "https://share.zight.com/WnunPYX1",
-    documentation: "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/jaden_rowdie_capaciti_org_za/EYpePD1rJnBAsdsgFeuguhUBVkkE4AopEs3Xl-JJAdlwtQ?e=QF1v6E",
     demoLabel: "View Demo",
     tags: ["Python", "TensorFlow", "ML"],
   },
@@ -23,7 +22,6 @@ const projects = [
     image: project3,
     github: "https://github.com/Tech-Hubb/Thrivesense-AI-Wellness-assistant",
     demo: "https://share.zight.com/WnunLzPN",
-    documentation: "https://capeitinitiative.sharepoint.com/:b:/s/DevNinjas/EQQWpWX9dLhArNmlN53zjA8Bfb4Flp2jF38zOM5UqMrDvA?e=KOtiSK",
     demoLabel: "View Demo",
     tags: ["AI", "NLP", "Wellness"],
   },
@@ -33,7 +31,6 @@ const projects = [
     image: project2,
     github: "https://github.com/JadenMcRowdie/Algora-Chatbot",
     demo: "https://creator.voiceflow.com/share/68aea8e4d54e34927d61667f/development",
-    documentation: "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/jaden_rowdie_capaciti_org_za/Ec_VcThgsbdJvuLoJ93tUksBoOAFh5j5ushwn2SphyZVSw?e=ck0w1b",
     demoLabel: "View Website",
     tags: ["Chatbot", "SQL", "BI"],
   },
@@ -252,19 +249,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             <a href={project.demo} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-2 h-4 w-4" />
               {project.demoLabel}
-            </a>
-          </Button>
-        )}
-        {project.documentation && (
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            asChild
-            className="text-muted-foreground hover:text-foreground rounded-lg"
-          >
-            <a href={project.documentation} target="_blank" rel="noopener noreferrer">
-              <FileText className="mr-2 h-4 w-4" />
-              Docs
             </a>
           </Button>
         )}
